@@ -1,6 +1,6 @@
 # Note
 
-This is a fork of [Anthony Corso's Crux.jl package](https://github.com/sisl/Crux.jl) for deep reinforcement learning in Julia, with some broken dependencies (particularly interfaces with OpenAI Gym) stripped off, so that much of the rest of the package remains available and installable with the latest versions of Julia before possible attempts to fix the original package. Most of the examples and tests dependent on the Python OpenAI Gym environments are therefore deleted. However, the core package for solving custom RL environments written in the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface remains working.
+This is a fork of [Anthony Corso's Crux.jl package](https://github.com/sisl/Crux.jl) for deep reinforcement learning in Julia, with some broken dependencies (as of 15 Feb 2025, particularly interfaces with OpenAI Gym) stripped off, so that much of the rest of the package remains available and installable with the latest versions of Julia before possible attempts to fix the original package. Most of the examples and tests dependent on the Python OpenAI Gym environments are therefore deleted. However, the core package for solving custom RL environments written in the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface remains working.
 
 Currently, the package works with Julia 1.11 under Windows, Linux, and MacOS, and works with Julia 1.10 under Linux.
 
