@@ -3,7 +3,7 @@
     S::AbstractSpace # State space
     N::Int = 1000 # Number of environment interactions
     ΔN::Int = 4 # Number of interactions between updates
-    max_steps::Int = 100 # Maximum number of steps per episode
+    max_steps::Int = 200 # Maximum number of steps per episode
     log::Union{Nothing, LoggerParams} = nothing # The logging parameters
     i::Int = 0 # The current number of environment interactions
     param_optimizers::Dict{Any, TrainingParams} = Dict() # Training parameters for the parameters
