@@ -18,6 +18,8 @@ julia --project examples/rl/cartpole.jl
 ```
 The code solves the environment with several RL algorithms and plots the learning curves in `examples/rl/cartpole_training.pdf`. The PPO training outcome will be shown as an animation. Log files will be written to `logs/`.
 
+In case any dependency becomes broken in the future, please switch to the `manifest` branch which contains the exact last working versions of dependencies, in `Manifest-v1.11.toml` for Julia 1.11 and `Manifest.toml` for Julia 1.10, on Linux (x86_64 glibc).
+
 Below is the original README.
 
 # Crux.jl
