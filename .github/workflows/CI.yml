@@ -23,8 +23,14 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
+          - macOS-latest
         arch:
           - x64
+        exclude:
+        # broken binary depenedency with FFMPEG
+          - version: "1.10"
+            os: windows-latest
+       
     steps:
       # # install CUDA
       # - uses: Jimver/cuda-toolkit@v0.2.4
