@@ -52,7 +52,7 @@ println("Solve with SoftQLearning w/ varying α (~12 seconds)")
 # Plot the learning curve
 p = plot_learning([𝒮_reinforce, 𝒮_a2c, 𝒮_ppo, 𝒮_dqn, 𝒮_sql], title = "CartPole-V0 Training Curves", 
     labels = ["REINFORCE", "A2C", "PPO", "DQN", "SoftQ"])
-Crux.savefig(p, "examples/rl/cartpole_training.pdf")
+Crux.savefig(p, "cartpole_training.pdf")
 
 # Commented out broken code due to a lack of the `render` method for our CartPole environment
 # Produce a gif with the final policy
