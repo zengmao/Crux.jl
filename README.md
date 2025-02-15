@@ -4,7 +4,7 @@ This is a fork of [Anthony Corso's Crux.jl package](https://github.com/sisl/Crux
 
 Currently, the package works with Julia 1.11 under Windows, Linux, and MacOS, and works with Julia 1.10 under Linux.
 
-In <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a>, we use the CartPole environment provided by `ReinforcementLearningEnvironments.jl` and convert it into the POMDPs interface, as a replacement of the OpenAI Gym equivalent of this environment. To try this example, first include the package of this repo in the Julia REPL (in a new virtual environment):
+In <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a>, we use the CartPole environment provided by `ReinforcementLearningEnvironments.jl` and convert it into the POMDPs interface, as a replacement of the OpenAI Gym equivalent of this environment. To try this example, first install the package of this repo in the Julia REPL (in a new virtual environment):
 ```
 ]add https://github.com/zengmao/Crux.jl.git
 ```
