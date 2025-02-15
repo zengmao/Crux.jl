@@ -1,22 +1,16 @@
 # Note
 
-This is a fork of [Anthony Corso's Crux.jl package](https://github.com/sisl/Crux.jl) with some broken dependencies (particularly interfaces with OpenAI Gym) stripped off, so that much of the rest of the package remains available and installable with the latest versions of Julia before possible attempts to fix the original package. Most of the examples and tests dependent on the Python OpenAI Gym environments are therefore deleted. However, the core package for solving custom RL environments written in the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface remains working.
+This is a fork of [Anthony Corso's Crux.jl package](https://github.com/sisl/Crux.jl) for deep reinforcement learning in Julia, with some broken dependencies (particularly interfaces with OpenAI Gym) stripped off, so that much of the rest of the package remains available and installable with the latest versions of Julia before possible attempts to fix the original package. Most of the examples and tests dependent on the Python OpenAI Gym environments are therefore deleted. However, the core package for solving custom RL environments written in the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface remains working.
 
-To use the code, clone the repository and run
+In <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a>, we use the CartPole environment provided by `ReinforcementLearningEnvironments.jl` and convert it into the POMDPs interface, as a replacement of the OpenAI Gym equivalent of this environment. To try this example, first include the package of this repo in the Julia REPL (in a new virtual environment):
 ```
-julia --project
+]add https://github.com/zengmao/Crux.jl.git
 ```
-with either Julia v1.10 or v1.11. Install dependencies with
+Then install additional packages needed for the script:
 ```
-using Pkg
-Pkg.instantiate()
+]add POMDPs, QuickPOMDPs, POMDPTools, ReinforcementLearningEnvironments, Random, Flux, Plots
 ```
-
-In <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a>, we use the CartPole environment provided by `ReinforcementLearningEnvironments.jl` and convert it into the POMDPs interface, as a replacement of the OpenAI Gym equivalent of this environment. In the top-level directory of the forked repo, execute
-```
-julia --project examples/rl/cartpole.jl
-```
-The code solves the environment with several RL algorithms and plots the learning curves in `examples/rl/cartpole_training.pdf`. The PPO training outcome will be shown as an animation. Log files will be written to `logs/`.
+Then download a copy of <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a> and run it. The code solves the environment with several RL algorithms and plots the learning curves in `cartpole_training.pdf`. The PPO training outcome will be shown as an animation. Log files will be written to `logs/`.
 
 In case any dependency becomes broken in the future, please switch to the `manifest` branch which contains the exact last working versions of dependencies, in `Manifest-v1.11.toml` for Julia 1.11 and `Manifest.toml` for Julia 1.10, on Linux (x86_64 glibc).
 
