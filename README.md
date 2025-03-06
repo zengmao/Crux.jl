@@ -1,16 +1,24 @@
 # Crux.jl
 
-[![Build Status](https://github.com/zengmao/Crux.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/sisl/Crux.jl/actions/workflows/CI.yml)
+[![Build Status](https://github.com/zengmao/Crux.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/zengmao/Crux.jl/actions/workflows/CI.yml)
 
 This is a fork of [Anthony Corso's Crux.jl package](https://github.com/sisl/Crux.jl) for deep reinforcement learning in Julia, with some broken dependencies (as of 15 Feb 2025, particularly interfaces with OpenAI Gym) stripped off, so that much of the rest of the package remains available and installable with the latest versions of Julia before possible attempts to fix the original package. Most of the examples and tests dependent on the Python OpenAI Gym environments are therefore deleted. However, the core package for solving custom RL environments written in the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface remains working.
 
-Currently, the package works with Julia 1.11 under Windows, Linux, and MacOS, and works with Julia 1.10 under Linux.
+Currently, the package works with Julia 1.11 under Windows, Linux, and MacOS, and works with Julia 1.10 under Linux. First, you need to install Python dependencies in the Julia REPL:
+```
+]add Conda
+using Conda
+Conda.add("python=3.10")
+Conda.add("wandb")
+Conda.add("matplotlib")
+```
 
-In <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a>, we use the CartPole environment provided by `ReinforcementLearningEnvironments.jl` and convert it into the POMDPs interface, as a replacement of the OpenAI Gym equivalent of this environment. To try this example, first install the package of this repo in the Julia REPL (in a new virtual environment):
+Then install this package (in a new virtual environment, if in doubt):
 ```
 ]add https://github.com/zengmao/Crux.jl.git
 ```
-Then install additional packages needed for the script:
+
+In <a href="./examples/rl/cartpole.jl">examples/rl/cartpole.jl</a>, we use the CartPole environment provided by `ReinforcementLearningEnvironments.jl` and convert it into the POMDPs interface, as a replacement of the OpenAI Gym equivalent of this environment. To try this example, besides the present package, install additional packages needed for the script:
 ```
 ]add POMDPs, QuickPOMDPs, POMDPTools, ReinforcementLearningEnvironments, Random, Flux, Plots
 ```
@@ -21,9 +29,6 @@ In case any dependency becomes broken in the future, please switch to the `manif
 Below is the original README.
 
 # Crux.jl
-
-[![Build Status](https://github.com/sisl/Crux.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/sisl/Crux.jl/actions/workflows/CI.yml)
-[![Code Coverage](https://codecov.io/gh/sisl/Crux.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/sisl/Crux.jl)
 
 Deep RL library with concise implementations of popular algorithms. Implemented using [Flux.jl](https://github.com/FluxML/Flux.jl) and fits into the [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) interface.
 
